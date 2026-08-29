@@ -30,6 +30,11 @@ module cla4(
   wire p0, p1, p2, p3;
   wire g0, g1, g2, g3;
   wire c1, c2, c3;
+  wire c4;
+  wire and_p0_c0;
+  wire and_p1_g0, and_p1_p0_c0;
+  wire and_p2_g1, and_p2_p1_g0, and_p2_p1_p0_c0;
+  wire and_p3_g2, and_p3_p2_g1, and_p3_p2_p1_g0, and_p3_p2_p1_p0_c0;
   xor #(2) (p0, a[0], b[0]);
   and #(2) (g0, a[0], b[0]);
   xor #(2) (p1, a[1], b[1]);
@@ -62,5 +67,6 @@ module cla4(
   xor #(2) (sum[1], p1, c1);
   xor #(2) (sum[2], p2, c2);
   xor #(2) (sum[3], p3, c3);
+  assign cout= c4;
 
 endmodule
